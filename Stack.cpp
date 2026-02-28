@@ -35,16 +35,21 @@ int Stack::top() {
 }
 
 void Stack::pop() {
-    if (empty()==false) {
+    if (ptr_Top!=nullptr) {
         int i = ptr_Top->value;
         cout << "Elemento eliminado: "<< i << endl;
         ptr_Top = ptr_Top->ptr_Next;
-        // return i;
+        sizeStack--;
     }
 }
 
 void Stack::push(int v) {
     ptr_Top=make_shared<Node>(v, ptr_Top);
+    sizeStack++;
+}
+
+int Stack::size() {
+    return sizeStack;
 }
 
 
@@ -66,7 +71,7 @@ void Stack::printDescendente(shared_ptr<Node> node) const{     //Funcion print p
         return;
     }
     cout << node->value << " ";         //Se imprime
-    printDescendente(node->ptr_Next);    //Luego se baja
+    printDescendente(node->ptr_Next);   //Luego se baja
 }
 
 void Stack::printBottom2Top() {

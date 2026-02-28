@@ -18,17 +18,19 @@ private:
     };
 
     shared_ptr<Node> ptr_Top;   //Ptr Top
+    int sizeStack=0;
 
     void printAscendente(shared_ptr<Node> node) const;      //mostrar por pantalla de abajo a arriba
     void printDescendente(shared_ptr<Node> node) const;     //mostrar por pantalla de arriba a abajo
 
 public:
     bool empty();               //.empty
-    int top();                 //.top
-    void pop();                  //.pop
+    int top();                  //.top
+    void pop();                 //.pop
     void push(int v);           //.push
     void printTop2Bottom();     //.print
     void printBottom2Top();     //.print
+    int size();                //.size
 };
 
 #endif //STACK_PTR_V01_STACK_H
