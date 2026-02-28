@@ -17,7 +17,6 @@ int main() {
     pila.pop();                     //eliminamos el primer elemento
     pila.printTop2Bottom();
     cout << "El valor del elemento de la cima es: "<<pila.top()<<endl;
-
     pila.printBottom2Top();
     return 0;
 }
